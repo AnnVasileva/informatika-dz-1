@@ -2,40 +2,29 @@
 using namespace std;
 int main()
 {
-    const int n = 6;
-    int i, j;
-    int t;
-    int a[n];
-    cout << "Введите массив a: " << endl;
-    for (i=0; i < n; i++)
-      cin >> a[i];
-      cout << "Первоначальный массив: " << endl;
-      for (i=0; i < n; i++)
-      cout << a[i] << " ";
-      cout << endl;
+    int i;
+    int n = 0;
+    int a, b, c, d;
+    cout << "Введите a = ";
+    cin >> a;
+    cout << "Введите b = ";
+    cin >> b;
+    cout << "Введите c = ";
+    cin >> c;
+    cout << "Введите d = ";
+    cin >> d;
+    cout << a <<" " << b << endl;
+    cout << c <<" " << d << endl;
 
+    for (i = 10000; i < 100000; i++)
+     if ((i % a == b) && (i % c == d)) 
+     {
+         cout << i << "  ";
+         n = 1;
+     }
+     
+if (n == 0) cout << -1; 
+cout << endl;
 
-    for (i=n-1; i > 0; i--)
-       if ((a[i+1] < a[i]) && (a[i] >= 0) && (a[i+1] < 0))
-       {
-           t = a[i];
-           a[i] = a[i+1];
-           a[i+1] = t;
-       }
-
-      for (i=0; i < n-1; i++)
-      if ((a[i] > a[i+1]) && (a[i+1] < 0) && (a[i] > 0))
-       {
-           t = a[i];
-           a[i] = a[i+1];
-           a[i+1] = t;
-       }
-       
-
-cout << "Изменённый массив: " << endl;
-for (i=0; i < n; i++)
- cout << a[i] << " ";
- cout << endl;
- 
- return 0;
+return 0;
 }
