@@ -7,7 +7,7 @@ int main()
     int i;
     int a[n];
     int r = 0;
-    int sum = 0;
+    double sum = 0;
     int k = 0;
     cout << "Введите массив a: " << endl;
     for (i=0; i < n; i++)
