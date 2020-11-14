@@ -1,49 +1,39 @@
 #include <iostream>
 using namespace std;
-int main(){
-    int i;
-    int t=0;
-    int A, B, C, D;
-    int n = 9;
-    int a[n];
-
-    cout << "Введите исходный массив а: "<< endl;
+int main()
+{
+    const int n = 5;
+    int max = -10000, maxb = -10000;
+    int m;
+    int i, j;
+    int a[i];
+    cout << "Введите массив a: " << endl;
+     for (i=0; i < n; i++)
+      cin >> a[i];
     for (i=0; i < n; i++)
-    {
-        cout << "a[" << i << "]= ";
-        cin >> a[i];
-    }
+    cout << a[i] << " ";
+    cout << endl;
 
-cout << "A=";
-cin >> A;
-cout << "B=";
-cin >> B;
-cout << "C=";
-cin >> C;
-cout << "D=";
-cin >> D;
+    for (i=0; i < n; i++)
+      if (a[i] > max) max = a[i];
 
-int k=0;
+    int *b = new int [max];
+      for (j=0; j <= max; j++)
+       b[j] = 0;
 
-for (i=A; i <= (B - ((B - A + 1) / 2)); i++)
-{
-    t = a[i];
-    a[i] = a[B-k];
-    a[B-k] = t;
-    k++;
-}
+    for (i=0; i < n; i++)
+     b[a[i]] += 1;
 
-int r=0;
-for (i=C; i <= (D - ((D - C + 1) / 2)); i++)
-{
-    t = a[i];
-    a[i] = a[D-r];
-    a[D-r] = t;
-    r++;
-}
-cout << "Итоговый массив a: ";
-for (i=0; i < n; i++)
- cout << a[i] << " ";
+     for (j=0; j <= max; j++)
+      if (b[j] > maxb) 
+      {
+          maxb = b[j];
+          m = j;
+      }
+      delete [] b;
+       
+      cout << "Самое часто повторяющееся число в массиве = " << m << endl;
+      return 0;
 
-return 0;
+
 }
